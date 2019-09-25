@@ -1,0 +1,119 @@
+.widget_shopping_cart {
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  clear: both;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  background: #fff;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.widget_shopping_cart .cart-sidebar-content {
+  margin-top: 15px;
+}
+
+.widget_shopping_cart .cart-sidebar-content .cart-list {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.widget_shopping_cart .cart-sidebar-content .cart-list .cart-item {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  border: 1px solid #ffae00;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.widget_shopping_cart .cart-sidebar-content .cart-list .cart-item .btn-remove-cart-item {
+  top: 2;
+  right: 2;
+}
+
+.widget_shopping_cart .cart-sidebar-content .cart-list .cart-item .cart-item-thumnail {
+  top: 10%;
+}
+
+.widget_shopping_cart .cart-sidebar-content .cart-list .cart-item .cart-item-thumnail img {
+  width: 80px;
+  height: 80px;
+}
+
+.widget_shopping_cart .cart-sidebar-content .cart-list .cart-item .cart-item-title {
+  text-align: center;
+  padding-top: 10px;
+  width: 200px;
+  margin-left: 94px;
+}
+
+.widget_shopping_cart .cart-sidebar-content .cart-list .cart-item .quantity {
+  text-align: center;
+}
+
+.widget_shopping_cart .cart-total {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  margin-top: 10px;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.208);
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.widget_shopping_cart .cart-buttons {
+  margin: 15px;
+  width: 100%;
+}
+
+.widget_shopping_cart .cart-buttons button {
+  width: 100%;
+}
+
+.btn-remove {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background: none;
+  color: #ffae00;
+  border: solid 1px #ffbb00;
+}
+
+.btn-remove:hover {
+  border: solid 1px #000;
+  color: #000;
+}
+
+.btn-close {
+  text-align: center;
+  background: none;
+  color: #ffae00;
+  border: none;
+  font-size: 25px;
+}
+
+.btn-close:hover {
+  color: #000;
+}
+
+.close-sidebar {
+  text-align: end;
+}
+
+.Price-amount {
+  font-weight: bold;
+}
+
+.Price-currencySymbol {
+  font-weight: bold;
+}
+/*# sourceMappingURL=widget-shopping-cart.css.map */

@@ -1,0 +1,117 @@
+.widget_shopping_cart {
+    transition: all .2s ease-in;
+    clear: both;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background: #fff;
+    z-index: 10;
+    overflow-y: auto;
+
+
+    .cart-sidebar-content {
+        margin-top: 15px;
+        .cart-list {
+            list-style-type: none;
+            margin: 0 !important;
+            padding: 0 !important;
+
+            .cart-item {
+                margin-top: 5px !important;
+                margin-bottom: 5px !important;
+                border: 1px solid rgb(255, 174, 0);
+                padding: 2px;
+                border-radius: 5px;
+
+                .btn-remove-cart-item {
+                    top: 2;
+                    right: 2;
+                }
+
+                .cart-item-thumnail {
+                    top: 10%;
+
+                    img {
+
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+
+                .cart-item-title {
+                    text-align: center;
+                    padding-top: 10px;
+                    width: 200px;
+                    margin-left: 94px;
+                }
+
+                .quantity {
+                    text-align: center;
+
+                }
+                
+            }
+        }
+
+    }
+
+    .cart-total {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-style: solid;
+        border-left: none;
+        border-right: none;
+        margin-top: 10px;
+        border-width: 1px;
+        border-color: rgba(0, 0, 0, 0.208);
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .cart-buttons{
+        margin: 15px;
+        width: 100%;
+        button{
+            width: 100% ;
+        }
+    }
+}
+
+.btn-remove {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background: none;
+    color: rgb(255, 174, 0);
+    border: solid 1px rgb(255, 187, 0);
+
+    &:hover {
+        border: solid 1px #000;
+        color: #000;
+    }
+}
+.btn-close {
+    
+    text-align: center;
+    background: none;
+    color: rgb(255, 174, 0);
+    border: none;
+    font-size: 25px;
+    &:hover {
+        color: #000;
+    }
+}
+.close-sidebar{
+    text-align: end;
+    
+}
+.Price-amount{
+    font-weight: bold;
+
+}
+.Price-currencySymbol{
+    font-weight: bold;
+}

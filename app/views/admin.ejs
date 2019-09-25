@@ -1,0 +1,236 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom-bootstrap.css">
+    <link rel="stylesheet" href="/css/canvas.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link rel="stylesheet" href="/css/sweetalert.css">
+    <style type="text/css">
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  float:right;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input.primary:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+    </style>
+</head>
+
+<body class="home">
+    <div class="wrapper overlay">   
+        <header id="header">
+            <div class="header-wrapper">
+                <div class="header-main">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="/"> <img width="270px" height="84px"
+                                        src="uploads/logo1.jpg" alt=""></a>
+                            </div>
+
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                  <li class="nav-item active">
+                                    <a class="nav-link" href="/admin">Quản lý sản phẩm</a>
+                                  </li>
+                                  <li class="nav-item active">
+                                    <a class="nav-link" href="/khachhang">Đơn hàng</a>
+                                  </li>
+                                </ul>
+                              </div>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        </br>
+            
+            <div>
+            <button type="button" class="btn btn-primary" onclick="Xoaupdatemodal()" data-toggle="modal" data-target="#myModalupdate" style="margin-left: 8%">Thêm Sản Phẩm</button>
+            <button type="button" class="btn btn-primary" onclick="magiamgia()" data-toggle="modal" data-target="#myModalmagiamgia" style="margin-left: 1%">Quản Lý Mã Giảm Giá</button>
+            <button type="button" class="btn btn-primary" onclick="donggia()" data-toggle="modal" data-target="#myModaldonggia" style="margin-left: 1%">Quản Lý Đồng Giá</button>
+            </div>
+            </br>
+        <main class="main" style="background-color: white">
+            
+        </main>
+    </div>
+    <div class="modal fade" tabindex="-1" id="myModaldonggia"role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#e8e9ea">
+        <h4 class="modal-title">Quản lý đồng giá</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+              </br>
+        <table>
+          <tr>
+            <td width="25%"><label class="switch">
+          <input type="checkbox" class="primary" id="apdung">
+          <span class="slider round"></span>
+        </label></td>
+            <td width="75%"><label style="font-size: 150%">Áp dụng chiến dịch đồng giá</label></td>
+          </tr>
+        </table>
+      <div class="modal-body">
+          <div>
+              <div>
+                <table>
+                  <tr>
+                    <td><label>Đồng giá:</label></td>
+                    <td><input type="text" class="form-control" id="tiendonggia" style="width: 100%;"></input></td>
+                  </tr>
+                </table>
+                </br>
+                <div id="danhsachdonggia"></div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                      <button type="button" class="btn btn-success" onclick="Apdungdonggia()" data-dismiss="modal">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="modal fade" id="myModalmagiamgia" role="dialog">
+                <div class="modal-dialog">
+                
+                  <div class="modal-content">
+                    <div class="modal-header" style="background-color:#e8e9ea">
+                      <h4 class="modal-title">Quản lý mã giảm giá</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>    
+                    </div>
+                    <div class="modal-body">
+                  <div>
+                    <center><label style="font-weight: bold;"> Tạo mã giảm giá </label>
+                    <div>
+                      <table>
+                        <tr>
+                          <td><label>Mã Giảm Giá:</label></td>
+                          <td><input type="text" class="form-control" id="magiamgia" style="width: 100%;"></input></td>
+                        </tr>
+                        <tr>
+                          <td><label>Số tiền giảm:</label></td>
+                          <td><input type="text" class="form-control" rows="3" id="sotiengiam" style="width: 100%;"></input></td>
+                        </tr>
+                      </table>
+                      
+                      
+                      <button type="button" class="btn btn-success" onclick="taomagiamgia()" data-dismiss="modal" >Lưu</button></center>
+                      </br>
+                      <center><label style="font-weight: bold;">Danh sách mã giảm giá</label></center>
+                      
+                      
+                      <div id="danhsachmagiamgia"></div>
+                  </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+        <div class="modal fade" id="myModalupdate" role="dialog">
+                <div class="modal-dialog">
+                
+                  <div class="modal-content">
+                    <div class="modal-header" style="background-color:#e8e9ea">
+                      <h4 class="modal-title">Thêm/Chỉnh Sửa Sản Phẩm</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>    
+                    </div>
+                    <div class="modal-body">
+                  <div>
+                    <label> Tên Sản Phẩm: </label>
+                    <input type="text" class="form-control" rows="3" id="tensanpham" style="resize: none"></input>
+                    <label> Mã Sản Phẩm: </label>
+                    <input type="text" class="form-control" rows="3" id="masanpham" style="resize: none"></input>
+                    <label> Giá Sản Phẩm: </label>
+                    <input type="text" class="form-control" rows="3" id="giasanpham" style="resize: none"></input>
+                    <label> Giá Khuyến Mãi: </label>
+                    <input type="text" class="form-control" rows="3" id="giakhuyenmai" style="resize: none"></input>
+
+                    <label> Hình Ảnh: </label>
+                    <textarea class="form-control" rows="3" id="image" style="resize: none" onchange="showhinhanh()"></textarea>
+                    </br>
+                    <center><img class="ml-1" src="" alt="" id="anhdemo" style="display: none;width:100px;height:100px;"></center>
+                    <input type="hidden" id="idsanpham">
+                  </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-success" onclick="SuaSanPham()" data-dismiss="modal">Lưu</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+</body>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+
+</html>

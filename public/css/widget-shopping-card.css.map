@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,qBAAqB,CAAA;EACjB,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,KAAK;CAC1B",
+    "sources": [
+        "widget-shopping-card.scss"
+    ],
+    "names": [],
+    "file": "widget-shopping-card.css"
+}

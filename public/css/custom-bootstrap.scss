@@ -1,0 +1,30 @@
+.navbar-form{
+    margin: 0;
+    margin-left: 5px;
+}
+.navbar-nav{
+    margin-left: 15px !important;
+}
+.navbar-header{
+    // margin-right: 50px;
+}
+.active-nav-bar{
+    background-color: #fdc215;
+  
+}
+.nav-item{
+    margin-left: 1px;
+    &:hover{
+        background-color: #fdc215;
+    }
+}
+
+.btn-cart-item-header {
+    span{
+        font-weight: bold;
+    }
+    i{
+        position: relative;
+      
+    }
+}
