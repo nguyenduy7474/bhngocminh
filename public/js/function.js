@@ -95,7 +95,7 @@ function laytatcasanpham(){
                     giakhuyenmai = Comma(data[i].giakhuyenmai)
                 }   
                 
-                string += `<div class="col-6 col-md-3 col-lg-4" onclick="themsanpham('`+ data[i].masanpham +`')">
+                string += `<div class="col-12 col-md-6 col-lg-4" onclick="themsanpham('`+ data[i].masanpham +`')">
                             <div class="col-inner">
                                 <div class="badge-container">
                                     <div class="badge-square">
