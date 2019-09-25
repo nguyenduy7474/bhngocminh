@@ -13,6 +13,7 @@ $(document).ready(function () {
         $(".widget_shopping_cart").css({
             "width": "30%"
         })
+        $("#containersanpham").css("max-width", "70%")
     }else{
         $(".widget_shopping_cart").css({
             "width": "100%",
