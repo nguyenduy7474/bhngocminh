@@ -40,7 +40,7 @@ class BHngocminh{
 
 		datasave.save((err) => {
 			if(err) console.log(err)
-			
+			res.send("success")
 			var mailOptions = {
 			      from: "nguyenduy7474@gmail.com",
 			      to: req.body.email,
@@ -56,7 +56,7 @@ class BHngocminh{
 			      if (err) {
 			          return console.log(err);
 			      } else {
-			          res.send("success")
+			          console.log("ok")
 			      }
 			});
 		})
