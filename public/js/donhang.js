@@ -43,6 +43,8 @@ function khachhang(){
                     tong += cacsanpham[j].soluong * cacsanpham[j].giakhuyenmai
                     string += cacsanpham[j].masanpham + "-" + cacsanpham[j].tensanpham  + " x " + cacsanpham[j].soluong + "</br>"
                 }
+                tong = tong + parseInt(data[i].shipfee)
+                data[i].tongtiensaugiamgia = data[i].tongtiensaugiamgia + parseInt(data[i].shipfee)
                 string += `</td>`
                 if(data[i].magiamgia){
                   string += `<td><del>`+ Comma(tong) +`đ</del></br>` +

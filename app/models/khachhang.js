@@ -11,6 +11,7 @@ var CustomerSchema = mongoose.Schema({
 	magiamgia: { type: String, default: ""},
 	tongtiensaugiamgia: { type: String, default: ""},
 	ngaydathang: { type: String, default: ""},
+	shipfee: { type: String, default: ""},
 	tinhtrangdonhang: { type: Number, default: 0},
 });
 

@@ -32,6 +32,7 @@ class BHngocminh{
 			ghichu: req.body.ghichu,
 			magiamgia: req.body.magiamgia,
 			tongtiensaugiamgia: req.body.tongtiensaugiamgia,
+			shipfee: req.body.shipfee,
 			ngaydathang: date,
 			tinhtrangdonhang: 0 
 		}
@@ -41,7 +42,7 @@ class BHngocminh{
 		datasave.save((err) => {
 			if(err) console.log(err)
 			res.send("success")
-			var mailOptions = {
+			/*var mailOptions = {
 			      from: "nguyenduy7474@gmail.com",
 			      to: req.body.email,
 			      subject: 'Đã nhận đơn hàng',
@@ -58,7 +59,7 @@ class BHngocminh{
 			      } else {
 			          console.log("ok")
 			      }
-			});
+			});*/
 		})
 	}
 

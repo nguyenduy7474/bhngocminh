@@ -1,7 +1,7 @@
 var sanphamdachon = []
 var danhsachsanpham = []
 var device = 0
-
+var shipfee = "22000"
 
 $(document).ready(function () {
 
@@ -78,7 +78,11 @@ function themsanpham(msp){
 
     $("#cart-list").empty();
     var ketqua = themvaogiohang(spvuachon);
-    sanphamdachon.forEach(function (values, key, giohang) {
+    var giasanpham
+    var values
+    for(var i=0; i< sanphamdachon.length; i++){
+        values = sanphamdachon[i]
+        giasanpham = Comma(values.giakhuyenmai*values.soluong)
         $("#cart-list").append(
             '<li data-product-id="' + values.masanpham + '" class="cart-item p-0 m-0 position-relative" style="height: 100px"> ' +
             '   <button data-product-id="' + values.masanpham + '" class="btn-remove btn-remove-cart-item position-absolute">X</button>' +
@@ -92,12 +96,12 @@ function themsanpham(msp){
             '   <button class="btn btn-success btn-number" onclick="giamsoluong(\''+ values.masanpham +'\')">-</button>' +
             '   <input type="text" id="quantity-item-'+ values.masanpham +'" class="quantity-item" min="1" max="9999" name="quantity" value="'+values.soluong+'" title="SL" size="4" inputmode="numeric" onchange="soluongmathang(\''+ values.masanpham +'\')">' +
             '     <button class="btn btn-success btn-number" onclick="tangsoluong(\''+ values.masanpham +'\')">+</button>' +
-            '       <span class="Price-amount-item">' + Comma(values.giakhuyenmai) + '</span>' +
+            '       <span class="Price-amount-item" id= "giaspsoluong_'+ values.masanpham +'">' + giasanpham + '</span>' +
             '       <span class="Price-currencySymbol-item">₫</span>' +
             '   </div>' +
             '</li>'
         )
-    }) 
+    }
     if(device == 1){
         addDataIcon()
     }
@@ -216,7 +220,7 @@ function tongtien() {
     sanphamdachon.forEach(function (values) {
         tongtien += values.giakhuyenmai * values.soluong;
     })
-
+    tongtien += 22000
     return tongtien;
 }
 function addCartTotal(sotiengiam, magiamgia) {  
@@ -260,9 +264,12 @@ function opensidebar(){
 function soluongmathang(msp){
     var id = "#quantity-item-" + msp
     var soluong = $(id)[0].value
+    var giasanpham
     for(var i=0; i<sanphamdachon.length; i++){
         if(sanphamdachon[i].masanpham == msp){
             sanphamdachon[i].soluong = soluong
+            giasanpham = Comma(sanphamdachon[i].giakhuyenmai*sanphamdachon[i].soluong)
+            $("#giaspsoluong_"+sanphamdachon[i].masanpham).html(giasanpham)
         }
     }
     addCartTotal()
@@ -301,21 +308,15 @@ function DatHang(){
         $("#yeucaudiachi").html(" Bạn hãy nhập địa chỉ")
     }
 
-    if(!$("#email").val()){
-        check = 1
-        $("#yeucauemail").html(" Bạn hãy nhập email")
-    }
-
-
     if(check == 0){
         let data = {
             hoten: $('#ThanhToan #hoten').val().trim(),
             sdt: $('#ThanhToan #sdt').val().trim(),
             diachi: $('#ThanhToan #diachi').val().trim(),
-            email: $('#ThanhToan #email').val().trim(),
             ghichu: $('#ThanhToan #ghichu').val().trim(),
             cacsanpham: sanphamdachon,
             magiamgia: $('#magiamgiasave').val().trim(),
+            shipfee: shipfee,
             tongtiensaugiamgia: $("#tongtiensaugiamgia").val().trim()
         }
 
