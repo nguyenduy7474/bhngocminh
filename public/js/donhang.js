@@ -17,7 +17,6 @@ function khachhang(){
                   <th width="12%">Tên Khách Hàng</th>
                   <th width="10%">Số Điện Thoại</th>
                   <th width="15%">Địa Chỉ</th>
-                  <th width="8%">Email</th>
                   <th width="10%">Ghi Chú</th>
                   <th width="16%">Đơn Hàng</th>
                   <th >Tổng</th>
@@ -35,7 +34,6 @@ function khachhang(){
                                   <td>`+ data[i].hoten +`</td>
                                   <td>`+ data[i].sodienthoai +`</td>
                                   <td>`+ data[i].diachi +`</td>
-                                  <td>`+ data[i].email +`</td>
                                   <td>`+ data[i].ghichu +`</td>
                                   <td>
                                   `
@@ -61,6 +59,7 @@ function khachhang(){
                 }
                 string += `<td>
                         <button type="button" class="btn btn-success" onclick="xulyxong('`+ data[i]._id +`')">Xử lý xong</button>
+                        </br></br><button type="button" class="btn btn-primary" onclick="inhoadon('`+ data[i]._id +`')">In Hóa Đơn</button>
                            </td>`
                                 
 
