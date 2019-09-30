@@ -341,7 +341,6 @@
 }
 
 .widget_shopping_cart .cart-buttons {
-  margin: 15px;
   width: 100%;
 }
 
@@ -368,11 +367,13 @@
   text-align: center;
   background: none;
   color: #ffae00;
-  border: none;
+  border-radius: 50%;
+  border: solid 1px #ffbb00;
   font-size: 25px;
 }
 
 .btn-close:hover {
+  border: solid 1px #000;
   color: #000;
 }
 

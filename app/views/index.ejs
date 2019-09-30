@@ -10,7 +10,30 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
     <link rel="stylesheet" href="/css/sweetalert.css">
+    <style type="text/css">
+        .float{
+            position:fixed;
+            overflow: hidden;
+            width:100%;
+            height:10%;
+            bottom:0px;
+            right:0px;
+            background-color:#0C9;
+            color:#FFF;
+            text-align:center;
+            box-shadow: 2px 2px 3px #999;
+            font-size: 150%;
+        }
 
+        .my-float{
+            margin-top:22px;
+        }
+        #sanphamdachon{
+            background-color: red;
+            border-radius: 50%;
+            font-size: 100%;
+        }
+    </style>
 </head>
 
 <body class="home">
@@ -67,18 +90,25 @@
                                     <h3>Về chúng tôi</h3>
                                     <span>Chúng tôi tự hào là nhà cung cấp Mật ong hàng đầu tại Việt Nam, với hơn 10 năm
                                         kinh nghiệm cung cấp mật ong cho thị trường Việt Nam, cũng như xuất khẩu.</span>
-
+                                <button type="button" style="display: none" class="btn btn-success float" id="xemgiohang" onclick="opensidebar()">
+                                    <i class="my-float">Xem giỏ hàng-</i>
+                                    <i id="sospdachon">0</i>
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
+
         </footer>
 
     </div>
     <div id="cart-popup" class="widget_shopping_cart" style="max-width: 100%;">
-
+        <div class="close-sidebar" id="sidebar" style="display: none">
+            <button id="btn-close" class="btn-close ">X</button>
+        </div>
         <div class="cart-popup-inner inner-padding">
             <div class="cart-popup-title text-center">
                 <h4 class="uppercase">Giỏ hàng</h4>
@@ -151,10 +181,13 @@
                   </div>
                 </div>
             </div>
+
+
 </body>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <script src="js/function.js"></script>
     <script src="js/sweetalert.min.js"></script>
 </html>
