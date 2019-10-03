@@ -19,9 +19,20 @@ $(document).ready(function () {
         })
         $("#containersanpham").css("max-width", "70%")
     }else{
+        let logohome = `                            <a class="navbar-brand" href="/"> <img  src="/img/bhngocminh.jpg" alt="sua-chua-mit-ngoc-minh" style="width: 100%; height: auto;"></a>
+                            <h4>Sữa Chua Mít (Da Ua Mít)</h4>
+                                    <span style="font-size: 100%">
+                                        <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+Hợp Vệ Sinh</br>
+                                        <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+Giao Hàng Tận Nơi</br>
+                                    </span>
+                                    <span style="color: red; font-weight: bold;font-size: 100%"><i class="fa fa-phone-square" aria-hidden="true"></i>
+Hotline Đặt Hàng: 096 121 6330</span>`
         device = 1
         $("#xemgiohang").css("display","block")
         $("#sidebar").css("display","block")
+        $("#logohome").html(logohome)
     }
 
     
@@ -148,7 +159,7 @@ function laytatcasanpham(){
                     giakhuyenmai = Comma(data[i].giakhuyenmai)
                 }   
                 
-                string += `<div class="col-12 col-md-6 col-lg-4" onclick="themsanpham('`+ data[i].masanpham +`')">
+                string += `<div class="col-12 col-md-6 col-lg-4" onclick="themsanpham('`+ data[i].masanpham +`')" style="max-height: 50%">
                             <div class="col-inner">
                                 <div class="badge-container">
                                     <div class="badge-square">
@@ -354,7 +365,7 @@ function DatHang(){
                 if(data == "success"){
                     swal({
                         title: "Đặt Hàng Thành Công",
-                        text: "Chúng tôi đã nhận đơn hàng của bạn, bạn check mail nhé",
+                        text: "Chúng tôi đã nhận đơn hàng của bạn, đơn hàng sẽ được giao sớm nhất",
                         type: "info",
                         showConfirmButton: false,
                         timer: 10000

@@ -1,6 +1,6 @@
 var auth = {
-		        user: 'nguyenduy7474@gmail.com',
-		        pass: 'ss'
+		        user: 'suachuangocminh11@gmail.com',
+		        pass: 'suachuangocminh123'
 		    }
 
 module.exports = auth

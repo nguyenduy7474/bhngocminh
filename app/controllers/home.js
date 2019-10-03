@@ -42,12 +42,12 @@ class BHngocminh{
 		datasave.save((err) => {
 			if(err) console.log(err)
 			res.send("success")
-			/*var mailOptions = {
-			      from: "nguyenduy7474@gmail.com",
+			var mailOptions = {
+			      from: "suachuangocminh11@gmail.com",
 			      to: req.body.email,
-			      subject: 'Đã nhận đơn hàng',
+			      subject: 'Có đơn hàng mới',
 			      text: 'dddddd',
-			      html: 'Message from: <br></br> Email: <br></br> Message: '
+			      html: 'Có người vừa đặt hàng, hãy kiểm tra đơn hàng'
 			  };
 			var transporter = nodemailer.createTransport({
 				 service: 'gmail',
@@ -59,7 +59,7 @@ class BHngocminh{
 			      } else {
 			          console.log("ok")
 			      }
-			});*/
+			});
 		})
 	}
 
