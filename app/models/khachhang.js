@@ -9,6 +9,7 @@ var CustomerSchema = mongoose.Schema({
 	email: { type: String, default: ""},
 	ghichu: { type: String, default: ""},
 	magiamgia: { type: String, default: ""},
+	sotiengiam: { type: String, default: ""},
 	tongtiensaugiamgia: { type: String, default: ""},
 	ngaydathang: { type: String, default: ""},
 	shipfee: { type: String, default: ""},

@@ -27,6 +27,12 @@ class BHngocminh{
 			res.send("success")
 		})
 	}
+
+	static GetOneOrder(req, res){
+		Khachhang.findOne({datatype: "khachhang", _id: req.body.iddonhang}, (err, data) => {
+			res.send(data)
+		})
+	}
 }
 
 module.exports = BHngocminh

@@ -31,6 +31,7 @@ class BHngocminh{
 			email: req.body.email,
 			ghichu: req.body.ghichu,
 			magiamgia: req.body.magiamgia,
+			sotiengiam: req.body.sotiengiam,
 			tongtiensaugiamgia: req.body.tongtiensaugiamgia,
 			shipfee: req.body.shipfee,
 			ngaydathang: date,

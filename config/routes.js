@@ -21,6 +21,7 @@ module.exports = function (app, passport) {
     app.get('/khachhang', Admin.Loggined, Khachhang.DonHang);
     app.post('/tatcadonhang', Admin.Loggined, Khachhang.Tatcadonhang);
     app.post('/xulyxong', Admin.Loggined, Khachhang.Xulyxong);
+    app.post('/laymotdonhang', Admin.Loggined, Khachhang.GetOneOrder);
 
     app.post('/apdungdonggia', Admin.Loggined, Admin.Usesameprice);
     app.post('/xoaapdungdonggia', Admin.Loggined, Admin.Deletesameprice);

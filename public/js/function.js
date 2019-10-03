@@ -231,6 +231,8 @@ function addCartTotal(sotiengiam, magiamgia) {
             $('.Price-amount').each(function(){
                 $(this).html("<del>" + Comma(tongtien()) + "</del>  " + Comma(tongtiensaugiam) + "đ");
             })
+            
+            $("#sotiengiam").val(sotiengiam)
             $("#magiamgiasave").val(magiamgia)
             $("#tongtiensaugiamgia").val(tongtiensaugiam)  
         }else{
@@ -309,6 +311,7 @@ function DatHang(){
     }
 
     if(check == 0){
+        console.log($('#sotiengiam').val().trim())
         let data = {
             hoten: $('#ThanhToan #hoten').val().trim(),
             sdt: $('#ThanhToan #sdt').val().trim(),
@@ -316,6 +319,7 @@ function DatHang(){
             ghichu: $('#ThanhToan #ghichu').val().trim(),
             cacsanpham: sanphamdachon,
             magiamgia: $('#magiamgiasave').val().trim(),
+            sotiengiam: $('#sotiengiam').val().trim(),
             shipfee: shipfee,
             tongtiensaugiamgia: $("#tongtiensaugiamgia").val().trim()
         }

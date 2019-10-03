@@ -8,8 +8,6 @@ function khachhang(){
         type: "POST",
         url: "/tatcadonhang",
         success: function(data){
-            console.log(data)
-
             string = `<center>
             <table class="table table-striped" style="width: 100%">
               <thead>
@@ -25,6 +23,7 @@ function khachhang(){
                 </tr>
               </thead>
               <tbody>`
+
             for(var i=data.length - 1; i>=0; i--){
                 var sothutu = data.length - i
                 var cacsanpham = data[i].cacsanpham
@@ -42,7 +41,8 @@ function khachhang(){
                     string += cacsanpham[j].masanpham + "-" + cacsanpham[j].tensanpham  + " x " + cacsanpham[j].soluong + "</br>"
                 }
                 tong = tong + parseInt(data[i].shipfee)
-                data[i].tongtiensaugiamgia = data[i].tongtiensaugiamgia + parseInt(data[i].shipfee)
+                
+                data[i].tongtiensaugiamgia = parseInt(tong) - parseInt(data[i].sotiengiam)
                 string += `</td>`
                 if(data[i].magiamgia){
                   string += `<td><del>`+ Comma(tong) +`đ</del></br>` +
@@ -129,4 +129,97 @@ function xulyxong(iddonhang){
             }
         }
     })
+}
+
+function inhoadon(iddonhang){
+      $.ajax({
+        type: "POST",
+        url: "/laymotdonhang",
+        data: {iddonhang: iddonhang},
+        success: function(data){
+            console.log(data)
+            if(data){
+              printDiv(data)
+            }else{
+                swal({
+                    title: "Phát sinh lỗi",
+                    text: "Title đã được sử dụng",
+                    type: "error",
+                    showConfirmButton: false,    
+                    timer: 3000
+                }).then((result)=>{
+                    // cho vào để ko báo lỗi uncaught
+                })
+                .catch(timer => {
+                    // cho vào để ko báo lỗi uncaught
+                }); 
+                
+            }
+        }
+    })
+}
+
+function printDiv(data) {
+    var string = `<h3>B&aacute;ch H&oacute;a Ngọc Minh</h3>
+<h3>Địa Chỉ: 46/15 Cư X&aacute; Lữ Gia P15 Q11 Tp.Hcm .</h3>
+<h3>Số Điện Thoại: 0971806636</h3>
+<center>
+<h2>H&oacute;a Đơn</h2>
+</center>
+<h3>Họ t&ecirc;n:&nbsp;`+ data.hoten +`</h3>
+<h3>Địa Chỉ:&nbsp;`+ data.diachi +`</h3>
+<h3>Số điện thoại:&nbsp;`+ data.sodienthoai +`</h3>
+<table style="width: 576px;" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td >T&ecirc;n sản phẩm&nbsp; &nbsp; &nbsp;</td>
+<td >&nbsp;Số lượng</td>
+<td >&nbsp;Đơn gi&aacute;</td>
+<td >&nbsp;Th&agrave;nh tiền&nbsp;</td>
+</tr>`
+    var tong = 0
+    for(var i=0; i< data.cacsanpham.length; i++){
+        tong += data.cacsanpham[i].giakhuyenmai * data.cacsanpham[i].soluong
+        string += `<tr>
+            <td >&nbsp;`+ data.cacsanpham[i].tensanpham +`</td>
+            <td >&nbsp;`+ data.cacsanpham[i].soluong +`</td>
+            <td >&nbsp;`+ data.cacsanpham[i].giakhuyenmai +`</td>
+            <td >&nbsp;`+ data.cacsanpham[i].giakhuyenmai * data.cacsanpham[i].soluong +`</td>
+            </tr>`
+    }
+        tong = parseInt(tong) + parseInt(data.shipfee)
+        string += `<tr></tr>`
+        string += `<tr>
+        <td >&nbsp;</td>
+        <td >&nbsp;</td>
+        <td >&nbsp;Phí Ship</td>
+        <td >&nbsp;`+ data.shipfee +`</td>
+        </tr>`
+        if(data.magiamgia){
+            tong = parseInt(tong) - parseInt(data.sotiengiam)
+            string += `<tr>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;Mã giảm giá</td>
+                <td >&nbsp;`+ data.magiamgia + `-` + data.sotiengiam +`</td>
+                </tr>`
+                    string += `<tr>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;Tổng</td>
+            <td >&nbsp;`+ tong +`</td>
+            </tr>`
+        }else{
+            string += `<tr>
+            <td >&nbsp;</td>
+            <td >&nbsp;</td>
+            <td >&nbsp;Tổng</td>
+            <td >&nbsp;`+ tong +`</td>
+            </tr>`
+        }
+string += `</tbody></table>`
+    window.frames["print_frame"].document.title = document.title;
+    window.frames["print_frame"].document.body.innerHTML = string;
+    window.frames["print_frame"].window.focus();
+    window.frames["print_frame"].window.print();
 }
