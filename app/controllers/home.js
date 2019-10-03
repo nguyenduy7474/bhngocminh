@@ -27,7 +27,6 @@ class BHngocminh{
 			sodienthoai: req.body.sdt,
 			cacsanpham: req.body.cacsanpham,
 			diachi: req.body.diachi,
-			email: req.body.email,
 			ghichu: req.body.ghichu,
 			magiamgia: req.body.magiamgia,
 			sotiengiam: req.body.sotiengiam,
@@ -44,7 +43,7 @@ class BHngocminh{
 			res.send("success")
 			var mailOptions = {
 			      from: "suachuangocminh11@gmail.com",
-			      to: req.body.email,
+			      to: "suachuangocminh11@gmail.com",
 			      subject: 'Có đơn hàng mới',
 			      text: 'dddddd',
 			      html: 'Có người vừa đặt hàng, hãy kiểm tra đơn hàng'
