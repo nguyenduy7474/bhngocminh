@@ -3,6 +3,7 @@ var bcrypt = require('bcrypt-nodejs');
 var dateFormat = require('dateformat');
 var Bdngocminh = require('../models/sanpham.js')
 var Magiamgia = require('../models/magiamgia.js')
+var ShipFee = require('../models/phiship.js')
 
 class Admin{
 	static Adminpage(req, res){
@@ -104,6 +105,20 @@ class Admin{
 		Bdngocminh.updateMany({datatype: "sanpham"}, {$set: {donggia: 0}}, (err) => {
 			if(err) throw err
 			res.send("success")
+		})
+	}
+
+	static CalShipFee(req, res){
+		ShipFee.updateOne({datatype: "phiship"}, {$set: {shipfee: req.body.shipfee, thongbaoshipfee: req.body.thongbaoshipfee}}, (err) => {
+			if(err) throw err
+			res.send("success")
+		})
+	}
+
+	static GetShipFee(req, res){
+		ShipFee.findOne({datatype: "phiship"}, (err, data) =>{
+			if(err) throw err
+			res.send(data)
 		})
 	}
 

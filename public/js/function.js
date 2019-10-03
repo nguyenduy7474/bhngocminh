@@ -1,7 +1,8 @@
 var sanphamdachon = []
 var danhsachsanpham = []
 var device = 0
-var shipfee = "22000"
+var shipfee = 0
+var thongbaoshipfee
 
 $(document).ready(function () {
 
@@ -45,8 +46,26 @@ $(document).ready(function () {
             addDataIcon();
         });
     })
-
+    loadshipfee()
 })
+
+function loadshipfee(){
+    $.ajax({
+        url:'/loadphiship',
+        method:'POST',
+        success: function(data){
+            if(data.shipfee == "true"){
+                shipfee = 0
+                thongbaoshipfee = data.thongbaoshipfee
+                $("#phishiphang").html(thongbaoshipfee)
+            }else{
+                $("#phishiphang").html("Phí Ship Hàng: 22,000đ")
+                shipfee = 22000
+            }
+        }
+    })
+}
+
 
 function themsanpham(msp){
 
@@ -220,7 +239,10 @@ function tongtien() {
     sanphamdachon.forEach(function (values) {
         tongtien += values.giakhuyenmai * values.soluong;
     })
-    tongtien += 22000
+    if(shipfee != 0){
+        tongtien = parseInt(tongtien) + shipfee
+    }
+
     return tongtien;
 }
 function addCartTotal(sotiengiam, magiamgia) {  
@@ -311,7 +333,6 @@ function DatHang(){
     }
 
     if(check == 0){
-        console.log($('#sotiengiam').val().trim())
         let data = {
             hoten: $('#ThanhToan #hoten').val().trim(),
             sdt: $('#ThanhToan #sdt').val().trim(),

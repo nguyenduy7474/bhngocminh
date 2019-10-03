@@ -107,12 +107,57 @@ input:checked + .slider:before {
             <button type="button" class="btn btn-primary" onclick="Xoaupdatemodal()" data-toggle="modal" data-target="#myModalupdate" style="margin-left: 8%">Thêm Sản Phẩm</button>
             <button type="button" class="btn btn-primary" onclick="magiamgia()" data-toggle="modal" data-target="#myModalmagiamgia" style="margin-left: 1%">Quản Lý Mã Giảm Giá</button>
             <button type="button" class="btn btn-primary" onclick="donggia()" data-toggle="modal" data-target="#myModaldonggia" style="margin-left: 1%">Quản Lý Đồng Giá</button>
+            <button type="button" class="btn btn-primary" onclick="loadphiship()" data-toggle="modal" data-target="#myModalshipfee" style="margin-left: 1%">Phí Ship</button>
             </div>
             </br>
         <main class="main" style="background-color: white">
             
         </main>
     </div>
+
+    <div class="modal fade" tabindex="-1" id="myModalshipfee"role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#e8e9ea">
+        <h4 class="modal-title">Phí Ship</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+              </br>
+          <center>
+        <table>
+          <tr>
+            <td width="25%"><label class="switch">
+          <input type="checkbox" class="primary" id="mienphi" onclick="phiornot()">
+          <span class="slider round"></span>
+        </label></td>
+            <td width="75%"><label>Miễn phí ship hàng</label></td>
+          </tr>
+        </table></center>
+        <center>
+        <div class="form-group" id="thongbao" style="display: none">
+          <label >Thông Báo</label>
+          <input type="text" style="width: 90%" class="form-control" id="thongbaomienphiship">
+        </div></center>
+      <div class="modal-body">
+          <div>
+              <div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                      <button type="button" class="btn btn-success" onclick="Apdungphiship()" data-dismiss="modal">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
     <div class="modal fade" tabindex="-1" id="myModaldonggia"role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

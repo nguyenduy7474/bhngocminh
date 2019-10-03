@@ -22,7 +22,6 @@ class BHngocminh{
 	static Order(req, res){
 		var now = new Date();
  		var date = dateFormat(now, "d/m/yyyy");
- 		console.log(req.body)
 		var data = {
 			hoten: req.body.hoten,
 			sodienthoai: req.body.sdt,

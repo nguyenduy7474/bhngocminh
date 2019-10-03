@@ -12,6 +12,7 @@ var CustomerSchema = mongoose.Schema({
 	sotiengiam: { type: String, default: ""},
 	tongtiensaugiamgia: { type: String, default: ""},
 	ngaydathang: { type: String, default: ""},
+	timestamp: { type: Date, default: Date.now },
 	shipfee: { type: String, default: ""},
 	tinhtrangdonhang: { type: Number, default: 0},
 });

@@ -24,6 +24,8 @@ module.exports = function (app, passport) {
     app.post('/laymotdonhang', Admin.Loggined, Khachhang.GetOneOrder);
 
     app.post('/apdungdonggia', Admin.Loggined, Admin.Usesameprice);
+    app.post('/phishiphang', Admin.Loggined, Admin.CalShipFee);
+    app.post('/loadphiship', Admin.Loggined, Admin.GetShipFee);
     app.post('/xoaapdungdonggia', Admin.Loggined, Admin.Deletesameprice);
 
 

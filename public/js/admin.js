@@ -497,3 +497,70 @@ function Apdungdonggia() {
         })
     }
 }
+
+function Apdungphiship(){
+    let data = {
+        shipfee: document.getElementById("mienphi").checked,
+        thongbaoshipfee: $("#thongbaomienphiship").val()
+    }
+
+    $.ajax({
+        url:'/phishiphang',
+        method:'POST',
+        data: data,
+        success: function(data){
+            if(data == "success"){
+                swal({
+                    title: "Cập nhật thành công",
+                    text: "Nội dung này đã được lưu lại",
+                    type: "info",
+                    showConfirmButton: false,
+                    timer: 3000
+                }).then((result)=>{
+                    location.reload();
+
+                })
+                .catch(timer => {
+                    location.reload();
+                }); 
+                
+            }else{
+                swal({
+                    title: "Phát sinh lỗi",
+                    text: "Title đã được sử dụng",
+                    type: "error",
+                    showConfirmButton: false,    
+                    timer: 3000
+                }).then((result)=>{
+                    // cho vào để ko báo lỗi uncaught
+                })
+                .catch(timer => {
+                    // cho vào để ko báo lỗi uncaught
+                }); 
+            }
+        }
+    })
+}
+
+function phiornot(){
+    if(document.getElementById("mienphi").checked){
+        $("#thongbao").show()
+    }else{
+        $("#thongbao").hide()
+    }
+}
+
+function loadphiship(){
+    $.ajax({
+        url:'/loadphiship',
+        method:'POST',
+        success: function(data){
+            console.log(data)
+            if(data.shipfee == "true"){
+                $('#mienphi').prop('checked', true);
+                phiornot()
+                $("#thongbaomienphiship").val(data.thongbaoshipfee)
+            }
+        }
+    })
+}
