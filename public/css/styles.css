@@ -246,9 +246,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 400px;
+  height: 200px;
   width: 100%;
-  background: url("../uploads/BS-SP.jpg") no-repeat;
   background-position: center;
 }
 
@@ -265,7 +264,7 @@
 }
 
 .footer .footer-wrapper .footer-section .footer-content {
-  color: white;
+  color: black;
   z-index: 1;
 }
 
