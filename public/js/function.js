@@ -344,7 +344,7 @@ function DatHang(){
     }
 
     if(check == 0){
-        let data = {
+        var data = {
             hoten: $('#ThanhToan #hoten').val().trim(),
             sdt: $('#ThanhToan #sdt').val().trim(),
             diachi: $('#ThanhToan #diachi').val().trim(),
