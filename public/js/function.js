@@ -19,7 +19,7 @@ $(document).ready(function () {
         })
         $("#containersanpham").css("max-width", "70%")
     }else{
-        let logohome = `                            <a class="navbar-brand" href="/"> <img  src="/img/bhngocminh.jpg" alt="sua-chua-mit-ngoc-minh" style="width: 100%; height: auto;"></a>
+        var logohome = `                            <a class="navbar-brand" href="/"> <img  src="/img/bhngocminh.jpg" alt="sua-chua-mit-ngoc-minh" style="width: 100%; height: auto;"></a>
                             <h4>Sữa Chua Mít (Da Ua Mít)</h4>
                                     <span style="font-size: 100%">
                                         <i class="fa fa-hand-peace-o" aria-hidden="true"></i>

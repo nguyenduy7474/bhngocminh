@@ -1,0 +1,75 @@
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+.someElement {margin:1em}
+}
+
+/* Chrome 46+ (and Opera 33+) */
+
+/* Chrome and Safari (Any) */
+.selector:not(*:root) { property:value; }
+
+/* Safari 6.1+ (9.0 is the latest version of Safari at this time) */
+@media screen and (min-color-index:0) 
+and(-webkit-min-device-pixel-ratio:0) { @media
+{
+   .safari_only { 
+
+       color:#0000FF; 
+       background-color:#CCCCCC; 
+
+   }
+}}
+
+/* Display Content To Chrome or Safari */
+.selector:after { 
+   content: "Webkit Content Here"\@/""; 
+   property:value; 
+}
+
+/* Display Content To Chrome or Safari */
+.selector:not(*:root):after { 
+   content: "Webkit Content Here";
+   property:value; 
+}
+
+/* Safari 6.1-7.0 */
+@media screen and (-webkit-min-device-pixel-ratio:0) 
+and (min-color-index:0)
+{  
+  .safari_only {(;
+
+     color:#0000FF; 
+     background-color:#CCCCCC; 
+
+   );}
+}
+
+/* Safari 7.1+ (9.0 is the latest version of Safari at this time) */
+_::-webkit-full-page-media, _:future, :root .safari_only {
+
+ color:#0000FF; 
+ background-color:#CCCCCC; 
+
+}
+
+/* Safari 9+ */
+_::-webkit-:not(:root:root), .selector { property:value; } 
+
+/* Safari 9+ (non-iOS) */
+_:-webkit-full-screen:not(:root:root), .selector { property:value; }
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{ .className { margin:10px; } }
+
+- Safari và Google Chrome chủ yếu là giống nhau nhưng đôi khi xử lý khác nhau, đặc biệt là trong các hình thức Safari được cập nhật ít hơn, có một cách để phân biệt chúng trong CSS.
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+   /* Safari and Chrome, if Chrome rule needed */
+   .someClass {
+    color:#c00;
+   }
+
+   /* Safari 5+ ONLY */
+   ::i-block-chrome, .someClass {
+    color:#000;
+   }
+}

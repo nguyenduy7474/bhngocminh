@@ -8,6 +8,7 @@ function khachhang(){
         type: "POST",
         url: "/tatcadonhang",
         success: function(data){
+            console.log(data)
             string = `<center>
             <table class="table table-striped" style="width: 100%">
               <thead>
@@ -18,6 +19,7 @@ function khachhang(){
                   <th width="10%">Ghi Chú</th>
                   <th width="16%">Đơn Hàng</th>
                   <th >Tổng</th>
+                  <th >Ngày đặt hàng</th>
                   <th >Trạng Thái</th>
                   <th >Tùy chọn</th>
                 </tr>
@@ -52,6 +54,8 @@ function khachhang(){
                   string += `<td>`+ Comma(tong) +`đ</td>`
                 }
                 
+                string += `<td>`+ data[i].ngaydathang +`</td>`
+
                 if(data[i].tinhtrangdonhang == 0){
                     string += `<td>Đang xử lý</td>`
                 }else{
