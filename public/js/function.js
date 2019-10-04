@@ -167,7 +167,7 @@ function laytatcasanpham(){
                                                 class="onsale">-`+ sophantramgiam +`%</span></div>
                                     </div>
                                 </div>
-                                <div class="product-small" style="height: 50%">
+                                <div class="product-small" style="height: auto">
                                     <div>
                                         <img id="hinhanh_`+ data[i].masanpham +`" src="`+ data[i].image + `" width="200" height="250"
                                             alt="">
