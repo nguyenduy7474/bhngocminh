@@ -81,7 +81,7 @@ function loadshipfee(){
 function themsanpham(msp){
 
     var spvuachon
-    danhsachsanpham.forEach((values) => {
+    danhsachsanpham.forEach(function(values) {
         if(values.masanpham == msp){
             spvuachon = values
         }
@@ -369,11 +369,11 @@ function DatHang(){
                         type: "info",
                         showConfirmButton: false,
                         timer: 10000
-                    }).then((result)=>{
+                    }).then(function(result){
                         location.reload();
 
                     })
-                    .catch(timer => {
+                    .catch(function(timer){
                         location.reload();
                     }); 
                     
@@ -384,10 +384,10 @@ function DatHang(){
                         type: "error",
                         showConfirmButton: false,    
                         timer: 3000
-                    }).then((result)=>{
+                    }).then(function(result){
                         // cho vào để ko báo lỗi uncaught
                     })
-                    .catch(timer => {
+                    .catch(function(timer){
                         // cho vào để ko báo lỗi uncaught
                     }); 
                     
@@ -408,10 +408,10 @@ function thanhtoan(){
             type: "error",
             showConfirmButton: false,    
             timer: 3000
-        }).then((result)=>{
+        }).then(function(result){
             // cho vào để ko báo lỗi uncaught
         })
-        .catch(timer => {
+        .catch(function(timer){
             // cho vào để ko báo lỗi uncaught
         }); 
     }
@@ -434,10 +434,10 @@ function Apdungmagiamgia() {
                     type: "error",
                     showConfirmButton: false,    
                     timer: 3000
-                }).then((result)=>{
+                }).then(function(result){
                     // cho vào để ko báo lỗi uncaught
                 })
-                .catch(timer => {
+                .catch(function(timer){
                     // cho vào để ko báo lỗi uncaught
                 }); 
                 
