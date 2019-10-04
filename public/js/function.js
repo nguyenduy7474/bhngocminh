@@ -19,7 +19,7 @@ $(document).ready(function () {
         })
         $("#containersanpham").css("max-width", "70%")
     }else{
-        var logohome = `                            <a class="navbar-brand" href="/" style="height: auto"> <img  src="/img/bhngocminh.jpg" alt="sua-chua-mit-ngoc-minh" style="width: 100%; height: inherit"></a>
+        var logohome = `                            <a class="navbar-brand" href="/" style="height: auto;"> <img  src="/img/bhngocminh.jpg" alt="sua-chua-mit-ngoc-minh" style="width: 100%; height: inherit"></a>
                             <h4>Sữa Chua Mít (Da Ua Mít)</h4>
                                     <span style="font-size: 100%">
                                         <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
@@ -159,7 +159,7 @@ function laytatcasanpham(){
                     giakhuyenmai = Comma(data[i].giakhuyenmai)
                 }   
                 
-                string += `<div class="col-12 col-md-6 col-lg-4" onclick="themsanpham('`+ data[i].masanpham +`')" style="">
+                string += `<div class="col-12 col-md-6 col-lg-4" onclick="themsanpham('`+ data[i].masanpham +`')" style="height: auto">
                             <div class="col-inner">
                                 <div class="badge-container">
                                     <div class="badge-square">
